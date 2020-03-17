@@ -1,7 +1,7 @@
 
 window.targetGlobalSettings =
 {
-cookieDomain:"shashanknigam02.github.io"
+cookieDomain:"shashanknigam01.github.io"
 };
 
 
