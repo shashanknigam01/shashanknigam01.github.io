@@ -1,6 +1,39 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+  <!--Preconnect and DNS-Prefetch to improve page load time--> 
+    <link rel="preconnect" href="//accentureplc.tt.omtrdc.net"> 
+    <link rel="dns-prefetch" href="//accentureplc.tt.omtrdc.net"> 
+  <!--/Preconnect and DNS-Prefetch-->
+	
+<!--Data Layer to enable rich data collection and targeting--> 
+    <script> 
+        var digitalData = { 
+            "page": { 
+                "pageInfo": { 
+                    "pageName": "ShashankNigam01" 
+                } 
+            } 
+        }; 
+    </script> 
+    <!--/Data Layer--> 
+    <!-- targetPageParams(), targetPageParamsAll(), Data Providers or targetGlobalSettings() functions to enrich the visitor profile or modify the library settings--> 
+    <script> 
+        targetPageParams = function() { 
+            return { 
+                "a": 1, 
+                "b": 2, 
+                "pageName": digitalData.page.pageInfo.pageName, 
+                "profile": { 
+                    "age": 30, 
+                    "country": { 
+                        "city": "Gurugram" 
+                    } 
+                } 
+            }; 
+        }; 
+    </script> 
+    <!--/targetPageParams()--> 
     <script type="text/javascript" src="js/at.js"></script>
     <title>My website - shashanknigam01.simplesite.com</title>
 
