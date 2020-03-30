@@ -1,7 +1,8 @@
 
 window.targetGlobalSettings =
 {
-cookieDomain:"shashanknigam01.github.io"
+cookieDomain:"shashanknigam01.github.io",
+  analyticsLogging: "client_side"
 };
 
 
