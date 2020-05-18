@@ -1,3 +1,8 @@
+var s_account = "ageo1xxpnw-jumpstart";
+var s=s_gi(s_account);
+s.pageName = "Home page";
+s.eVar1 = "Example eVar";
+s.events = "event1";
 /*
  Start ActivityMap Module
 
