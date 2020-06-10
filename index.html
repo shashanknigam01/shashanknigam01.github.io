@@ -8,6 +8,16 @@
 -->	
 <!--Data Layer to enable rich data collection and targeting--> 
     <script> 
+	document.addEventListener("at-library-loaded", function(e) {
+	   console.log('Lib Loaded '+new Date().getTime());
+	  });
+	  document.addEventListener("at-content-rendering-succeeded", function(e) {
+	   console.log('Content Render completed  '+new Date().getTime());
+	  });
+	document.addEventListener("at-request-succeeded", function(e) {
+	   console.log('Request Success '+new Date().getTime());
+	  });
+
         var digitalData = { 
             "page": { 
                 "pageInfo": { 
