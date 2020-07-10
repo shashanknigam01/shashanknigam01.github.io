@@ -1,8 +1,8 @@
 
-window.targetGlobalSettings =
+/*window.targetGlobalSettings =
 {
 cookieDomain:"shashanknigam01.github.io"
-};
+};*/
 
 
 /**
