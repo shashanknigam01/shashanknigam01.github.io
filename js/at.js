@@ -1,6 +1,6 @@
 window.targetGlobalSettings =
 {
-cookieDomain:"shashanknigam01.github.io"
+cookieDomain:"mboxedge31.tt.omtrdc.net"
 };
 
 
