@@ -3,6 +3,25 @@ window.targetGlobalSettings =
 cookieDomain:"shashanknigam01.github.io"
 };
 
+targetPageParams = function() {
+            //alert('TargetPageParams Called');
+            return { 
+                //"a": 1, 
+                "at_property": "f5160ddd-24fe-18e0-145a-0825411bb0cd",
+                //"b": 2, 
+                "pageName": digitalData.page.pageInfo.pageName,
+                "entity.categoryId":"Electornics:TV:LED",
+		"categoryId":"Electornics:TV:LED",
+		"entity.category":"Electornics:TV:LED"
+		   //"entity.name":"32"
+                /*"profile": { 
+                    "age": 30, 
+                    "country": { 
+                        "city": "Gurugram" 
+                    } 
+                } */
+            }; 
+        }; 
 
 /**
  * @license
