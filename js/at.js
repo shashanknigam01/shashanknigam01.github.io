@@ -10,16 +10,16 @@ targetPageParams = function() {
                 "at_property": "f5160ddd-24fe-18e0-145a-0825411bb0cd",
                 //"b": 2, 
                 "pageName": digitalData.page.pageInfo.pageName,
-                "entity.categoryId":"Electornics:TV:LED",
-		"categoryId":"Electornics:TV:LED",
-		"entity.category":"Electornics:TV:LED"
+               // "entity.categoryId":"Electornics:TV:LED",
+		//"categoryId":"Electornics:TV:LED",
+		//"entity.category":"Electornics:TV:LED"
 		   //"entity.name":"32"
-                /*"profile": { 
+                "profile": { 
                     "age": 30, 
                     "country": { 
                         "city": "Gurugram" 
                     } 
-                } */
+                } 
             }; 
         }; 
 
