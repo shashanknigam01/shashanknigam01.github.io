@@ -1,4 +1,4 @@
-var s_account = "ageo1xxpnw-jumpstart";
+var s_account = "ageo1xxpnwshashankadobetarget";
 var s=s_gi(s_account);
 s.pageName = "Home page";
 s.eVar1 = "Example eVar";
