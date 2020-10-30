@@ -5,7 +5,59 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AAM Tests</title>
+ <script> 
+	document.addEventListener("at-library-loaded", function(e) {
+	   console.log('Lib Loaded '+new Date().getTime());
+	  });
+	  document.addEventListener("at-content-rendering-succeeded", function(e) {
+	   console.log('Content Render completed  '+new Date().getTime());
+	  });
+	document.addEventListener("at-request-succeeded", function(e) {
+	   console.log('Request Success '+new Date().getTime());
+	  });
+
+        var digitalData = { 
+            "page": { 
+                "pageInfo": { 
+                    "pageName": "shashankTestPage" 
+                } 
+            } 
+        }; 
+    </script> 
+    <!--/Data Layer--> 
+    <!-- targetPageParams(), targetPageParamsAll(), Data Providers or targetGlobalSettings() functions to enrich the visitor profile or modify the library settings--> 
+    <script> 
+        
+
+	targetPageParamsAll = function(){
+		//alert('TargetPageParamsAll Called');
+	};
+    
+    </script> 
+   <!--targetPageParams();-->
+   <!-- <script type="text/javascript" src="VisitorAPI.js"></script> -->
+     <script>console.log('Lib Load Started '+new Date().getTime());</script>
+     <script type="text/javascript" src="js/at.js"></script> 
+  <script type="text/javascript" src="AppMeasurement.js"></script>
+		
+<!-- <script>
+    //prehiding snippet for Adobe Target with asynchronous Launch deployment
+    (function(g,b,d,f){(function(a,c,d){if(a){var e=b.createElement("style");e.id=c;e.innerHTML=d;a.appendChild(e)}})(b.getElementsByTagName("head")[0],"at-body-style",d);setTimeout(function(){var a=b.getElementsByTagName("head")[0];if(a){var c=b.getElementById("at-body-style");c&&a.removeChild(c)}},f)})(window,document,"body {opacity: 0 !important}",3E3);
+</script>
+-->
+	
+<!--<script src="https://assets.adobedtm.com/e72b4113c11a/202615059c46/launch-6d975dcde145-development.min.js" async></script>-->
+
+<!--	<script src="//assets.adobedtm.com/e72b4113c11a/dae2fc32f0c6/launch-58d3e0d2cb4f-development.min.js" async></script> -->
+
+<!-- <script src="//assets.adobedtm.com/launch-EN60f87f1eb85540689bdf9aa9b7cb8987-development.min.js" async></script> -->
+
+<script>
+
+//s.tl();
+
+</script>
+    <title>Shashank Test Site</title>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/style.css">
 	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
@@ -19,7 +71,7 @@
                     <div class="brand header-brand">
                         <h1 class="m-0">
 							<a href="#">
-								<img class="header-logo-image" src="dist/images/logo.svg" alt="Logo">
+								<img class="header-logo-image" src="dist/images/logo.svg" alt="Logo"> &nbsp; <img class="header-logo-image" src="https://shashanknigam01.github.io/favicon.ico" alt="Logo">
                             </a>
                         </h1>
                     </div>
