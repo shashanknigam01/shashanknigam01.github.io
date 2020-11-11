@@ -10,12 +10,14 @@ targetPageParams = function() {
                 "at_property": "f5160ddd-24fe-18e0-145a-0825411bb0cd",
                 //"b": 2, 
                 "pageName": digitalData.page.pageInfo.pageName,
+		 "profile.snigam1": 'abc1',
                // "entity.categoryId":"Electornics:TV:LED",
 		//"categoryId":"Electornics:TV:LED",
 		//"entity.category":"Electornics:TV:LED"
 		   //"entity.name":"32"
                 "profile": { 
                     "age": 30, 
+		    "snigam2":"abc2",
                     "country": { 
                         "city": "Gurugram" 
                     } 
