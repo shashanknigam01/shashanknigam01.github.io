@@ -17,6 +17,9 @@
 	document.addEventListener("at-request-succeeded", function(e) {
 	   console.log('Request Success '+new Date().getTime());
 	  });
+	 document.addEventListener("at-content-rendering-redirect", function(e) {
+	   console.log('at-content-rendering-redirect Success '+new Date().getTime());
+	  });
 
         var digitalData = { 
             "page": { 
