@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<!--
+    <link rel="preconnect" href="//accentureplc.tt.omtrdc.net"> 
+    <link rel="dns-prefetch" href="//accentureplc.tt.omtrdc.net"> 
+-->	
+<!--Data Layer to enable rich data collection and targeting--> 
+    <script> 
+        var digitalData = { 
+            "page": { 
+                "pageInfo": { 
+                    "pageName": "ShashankNigam01" 
+                } 
+            } 
+        }; 
+    </script> 
+    <!--/Data Layer--> 
+    <!-- targetPageParams(), targetPageParamsAll(), Data Providers or targetGlobalSettings() functions to enrich the visitor profile or modify the library settings--> 
+    <script> 
+        targetPageParams = function() {
+            //alert('TargetPageParams Called');
+            return { 
+                "a": 1, 
+                "at_property": "3bf26c5a-4613-08fc-528b-d54da55001bf",
+                "b": 2, 
+                "pageName": digitalData.page.pageInfo.pageName, 
+                "profile": { 
+                    "age": 30, 
+                    "country": { 
+                        "city": "Gurugram" 
+                    } 
+                } 
+            }; 
+        }; 
+
+	targetPageParamsAll = function(){
+		//alert('TargetPageParamsAll Called');
+	};
+    
+    </script> 
+   <!--targetPageParams();-->
+	
+    <script type="text/javascript" src="https://shashanknigam01.github.io/file/at.js"></script>  
+
+		
+<!-- <script>
+    //prehiding snippet for Adobe Target with asynchronous Launch deployment
+    (function(g,b,d,f){(function(a,c,d){if(a){var e=b.createElement("style");e.id=c;e.innerHTML=d;a.appendChild(e)}})(b.getElementsByTagName("head")[0],"at-body-style",d);setTimeout(function(){var a=b.getElementsByTagName("head")[0];if(a){var c=b.getElementById("at-body-style");c&&a.removeChild(c)}},f)})(window,document,"body {opacity: 0 !important}",3E3);
+</script>
+-->
+	
+<!--<script src="https://assets.adobedtm.com/e72b4113c11a/202615059c46/launch-6d975dcde145-development.min.js" async></script>-->
+
+<!--	<script src="//assets.adobedtm.com/e72b4113c11a/dae2fc32f0c6/launch-58d3e0d2cb4f-development.min.js" async></script> -->
+
+
+    <title>My website - shashanknigam01.simplesite.com</title>
+
+</head>
+<body id="body-id">
+	<a href="https://shashanknigam01.github.io/">link</a>
+<div class="grid-block fullwidth row align-center">
+
+<div class="dynamic-header-title">
+<h1 id="shashanknigam">
+	Shashank Nigam
+</h1>
+</div>
+<div class="dynamic-header-subtitle">
+<h2 id="simplewebsite">
+	Simple Website
+</h2>
+</div>
+
+</div>
+
+    
+    <div class="content">
+<p style="text-align: center;">I'm a paragraph. Click here to add your own text and edit me. I'm a great place for you to tell your story and let your visitors know a little more about you.</p>    
+</div>
+
+
+    
+<div class="footer-column-label">
+Social media
+</div>
+
+
+</body>
+</html>
