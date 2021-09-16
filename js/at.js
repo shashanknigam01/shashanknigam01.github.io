@@ -11,10 +11,10 @@ targetPageParams = function() {
                 //"b": 2, 
                 "pageName": digitalData.page.pageInfo.pageName,
 		 "profile.snigam1": 'abc1',
-               // "entity.categoryId":"Electornics:TV:LED",
+                  "entity.categoryId":"equipment",
 		//"categoryId":"Electornics:TV:LED",
 		//"entity.category":"Electornics:TV:LED"
-		   //"entity.name":"32"
+		   "entity.id":"Shashank"
                 "profile": { 
                     "age": 30, 
 		    "snigam2":"abc2",
