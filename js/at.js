@@ -14,7 +14,7 @@ targetPageParams = function() {
                   "entity.categoryId":"equipment",
 		//"categoryId":"Electornics:TV:LED",
 		//"entity.category":"Electornics:TV:LED"
-		   "entity.id":"Shashank"
+		   "entity.id":"Shashank",
                 "profile": { 
                     "age": 30, 
 		    "snigam2":"abc2",
