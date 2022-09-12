@@ -19,7 +19,7 @@ limitations under the License.
   <script type='module'/>
       // Import the functions you need from the SDKs you need
      import {initializeApp} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
-     import {getMessaging, getToken, onMessage} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-messaging.js';
+     import {getMessaging, getToken, onMessage, onBackgroundMessage} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-messaging.js';
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -53,8 +53,21 @@ limitations under the License.
         });
        }
       });
-
+console.log('OnMessage')
       onMessage(messaging, function(payload) {
+        console.log('[firebase-messaging-sw.js] Received background message ', payload);
+        // Customize notification here
+        const notificationTitle = 'Background Message Title';
+        const notificationOptions = {
+          body: 'Background Message body.',
+          icon: '/favicon.ico'
+        };
+
+        self.registration.showNotification(notificationTitle,
+          notificationOptions);
+      });
+      console.log('OnBackgroundMessage')
+       onBackgroundMessage(messaging, function(payload) {
         console.log('[firebase-messaging-sw.js] Received background message ', payload);
         // Customize notification here
         const notificationTitle = 'Background Message Title';
