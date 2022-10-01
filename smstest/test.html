@@ -65,31 +65,4 @@
     }else{
         window.s_account = "flipkart-prd-test";
     }
-    window.s_isDesktop = true;</script><script nonce="">if ('serviceWorker' in navigator && navigator.userAgent.indexOf("Mobile") === -1) {
-		navigator.serviceWorker.register('/sw.js').then(function(registration) {
-			console.log('ServiceWorker registration successful with scope: ', registration.scope);
-			navigator.onLine && navigator.serviceWorker.controller && navigator.serviceWorker.controller.postMessage('BANDWIDTH_COMPUTE');
-			navigator.serviceWorker.addEventListener('message', function (event) {
-				try {
-					const bandwidthData = JSON.parse(event.data);
-					if (bandwidthData && bandwidthData.data) {
-						window.bandwidth = bandwidthData.data.downlink + '_' + bandwidthData.data.computeMethod + '_' + bandwidthData.data.effectiveType + '_' + bandwidthData.data.type;
-					}
-				}catch(err) {
-					console.error('JSON.parse failed:', err);
-				}
-			});
-		})
-		.catch(function(err) {
-			console.error('ServiceWorker registration failed: ', err);
-		});
-	} else if('serviceWorker' in navigator && navigator.userAgent.indexOf("Mobile") > -1){
-        navigator.serviceWorker.getRegistration().then(function(registration) {
-            var serviceWorkerUnregistered=false;
-            if(registration) {
-                registration.unregister();
-                serviceWorkerUnregistered=true;
-            }
-            serviceWorkerUnregistered && window.location.reload();
-        });
-    }</script><script src="/smstest/content/omni16.js.download" defer="defer" async="" nonce="" id="omni_script"></script> <script nonce="">window._pxAppId = 'PXgNtTli3A';</script><script nonce="" src="/smstest/content/init.js.download" async=""></script><div class="_1TJ8BN"><div class="_2OTVHf _2G5C8I _2UQaT9 _2znEye" style="transform: translate(1058.25px, 296.141px);"><div class="_3Oikkn"><div class="_3A3v6D"><div class="zSYht7">Price details</div><div class="DNxOEU"><div class="_10gg3l"><div class="DWFdpZ">Maximum Retail Price<div class="_3jSdaM">(incl. of all taxes)</div></div><div class="_19_Y9G _1PLdiu"> ₹ 46263.00</div></div><div class="_10gg3l"><div class="DWFdpZ">Selling Price</div><div class="_19_Y9G _1PLdiu"> ₹ 33090.00</div></div><div class="_1C5V67"><div class="_10gg3l"><div class="DWFdpZ _8XxizX">Special Price</div><div class="_19_Y9G _8XxizX"> ₹ 32490.00</div></div></div></div></div><div class="_29xfUd"><div class="Dri4YI">Overall you save ₹13773 (29%) on this product</div></div></div></div></div></body></html>
+</script><script src="/smstest/content/omni16.js.download" defer="defer" async="" nonce="" id="omni_script"></script> <script nonce="">window._pxAppId = 'PXgNtTli3A';</script><script nonce="" src="/smstest/content/init.js.download" async=""></script><div class="_1TJ8BN"><div class="_2OTVHf _2G5C8I _2UQaT9 _2znEye" style="transform: translate(1058.25px, 296.141px);"><div class="_3Oikkn"><div class="_3A3v6D"><div class="zSYht7">Price details</div><div class="DNxOEU"><div class="_10gg3l"><div class="DWFdpZ">Maximum Retail Price<div class="_3jSdaM">(incl. of all taxes)</div></div><div class="_19_Y9G _1PLdiu"> ₹ 46263.00</div></div><div class="_10gg3l"><div class="DWFdpZ">Selling Price</div><div class="_19_Y9G _1PLdiu"> ₹ 33090.00</div></div><div class="_1C5V67"><div class="_10gg3l"><div class="DWFdpZ _8XxizX">Special Price</div><div class="_19_Y9G _8XxizX"> ₹ 32490.00</div></div></div></div></div><div class="_29xfUd"><div class="Dri4YI">Overall you save ₹13773 (29%) on this product</div></div></div></div></div></body></html>
