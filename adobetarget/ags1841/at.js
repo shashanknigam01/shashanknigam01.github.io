@@ -8,7 +8,7 @@ targetPageParams = function() {
             //alert('TargetPageParams Called');
             return { 
                 //"a": 1, 
-                "at_property": "f5160ddd-24fe-18e0-145a-0825411bb0cd",
+                "at_property": "4838174d-f37f-49b2-cdc5-bf95e1d8bc1b",
                 //"b": 2, 
                 "pageName": digitalData.page.pageInfo.pageName,
 		 "profile.snigam1": 'abc1',
