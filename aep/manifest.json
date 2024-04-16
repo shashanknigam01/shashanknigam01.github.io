@@ -9,6 +9,16 @@
   "background_color": "#fff",
   "theme_color": "#ff3385",
     "icons": [
+	    {
+            "src": "/aep/icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+	    {
+            "src": "/aep/icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
         {
             "src": "/aep/icon-large-cb438cac.png",
             "type": "image/png",
