@@ -1,0 +1,45 @@
+{
+  "name": "Shanks01Name",
+  "short_name": "Shanks01",
+  "id":"12345",
+  "start_url" : "/index.html",
+  "scope" : "/index.html",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#fff",
+  "theme_color": "#ff3385",
+    "icons": [
+        {
+            "src": "/aep/icon-large-cb438cac.png",
+            "type": "image/png",
+            "sizes": "1024x1024"
+        },
+        {
+            "src": "/aep/icon-large-maskable-c2078ced.png",
+            "type": "image/png",
+            "sizes": "1024x1024",
+            "purpose": "maskable"
+        }
+    ],
+    "description": "Compress and compare images with different codecs, right in your browser.",
+    "lang": "en",
+	"categories": [
+        "photo",
+        "productivity",
+        "utilities"
+    ],
+    "screenshots": [
+        {
+            "src": "/aep/screenshot1-0ff68546.png",
+            "type": "image/png",
+            "sizes": "540x720",
+            "form_factor": "narrow"
+        },
+        {
+            "src": "/aep/screenshot6-0168d284.jpg",
+            "type": "image/jpeg",
+            "sizes": "1024x593",
+            "form_factor": "wide"
+        }
+    ]
+}
