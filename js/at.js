@@ -1,3 +1,6 @@
+if ('serviceWorker' in navigator) {
+   navigator.serviceWorker.register("/aep/serviceworker.js");
+}
 window.targetGlobalSettings =
 {
 cookieDomain:"shashanknigam01.github.io"
