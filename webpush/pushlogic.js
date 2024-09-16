@@ -21,7 +21,7 @@
   Notification.requestPermission().then((permission) => {
     if (permission === 'granted') {
       console.log('Notification permission granted.');
-	  getToken(messaging,{vapidKey: 'BEaPLept_8NFE5xEeteLi6yWWRWuVBED-sptqLGmBeoxNxxyThy7BB52u2FE6WT4mj28a5OgvKujDnSP6Fv4xzQ'}).then((currentToken) => {
+	  getToken(messaging,{vapidKey: 'BKeu5Bn_F3smfGVJqi-E1h2dITnV1VyStlM9JSnFYyWSRZ-OBGNt8LqXjA2kiQ7dQFSHQyq7U5NSP5Xwl869kWo'}).then((currentToken) => {
       if (currentToken) {
 	    console.log(currentToken);
       } else {
