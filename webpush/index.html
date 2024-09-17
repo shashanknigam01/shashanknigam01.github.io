@@ -67,11 +67,6 @@ const firebaseConfig = {
   self.registration.showNotification(notificationTitle,
     notificationOptions);
 });
-
-onBackgroundMessage(messaging, function(payload) {
-  console.log('[firebase-messaging-sw.js] Received BG message ', payload);
-  
-});
   </script>  
 
 </head>
