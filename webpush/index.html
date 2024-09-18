@@ -11,9 +11,9 @@
         <div id="notis"></div>
         <div id="err"></div>
         <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js"></script>
 
-        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-messaging.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-messaging.js"></script>
         <script>
             MsgElem = document.getElementById('msg');
             TokenElem = document.getElementById('token');
@@ -32,7 +32,7 @@ const firebaseConfig = {
             firebase.initializeApp(firebaseConfig);
 
             const messaging = firebase.messaging();
-            messaging
+            /*messaging
                 .requestPermission()
                 .then(function () {
                     MsgElem.innerHTML = 'Notification permission granted.';
@@ -47,7 +47,25 @@ const firebaseConfig = {
                 .catch(function (err) {
                     ErrElem.innerHTML = ErrElem.innerHTML + '; ' + err;
                     console.log('Unable to get permission to notify.', err);
-                });
+                });*/
+Notification.requestPermission().then((permission) => {
+    if (permission === 'granted') {
+      console.log('Notification permission granted.');
+	  getToken(messaging,{vapidKey: 'BKeu5Bn_F3smfGVJqi-E1h2dITnV1VyStlM9JSnFYyWSRZ-OBGNt8LqXjA2kiQ7dQFSHQyq7U5NSP5Xwl869kWo'}).then((currentToken) => {
+      if (currentToken) {
+	    console.log(currentToken);
+      } else {
+        // Show permission request.
+        console.log('No registration token available. Request permission to generate one.');
+        // Show permission UI.
+
+      }
+    }).catch((err) => {
+      console.log('An error occurred while retrieving token. ', err);
+    });
+	 }
+	});
+            
 
             let enableForegroundNotification = true;
             messaging.onMessage(function (payload) {
