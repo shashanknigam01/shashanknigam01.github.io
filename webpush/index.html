@@ -50,21 +50,18 @@ Notification.requestPermission().then((permission) => {
 	});
             
 
-            let enableForegroundNotification = true;
-            messaging.onMessage(function (payload) {
-                console.log('Message received. ', payload);
-                NotisElem.innerHTML =
-                    NotisElem.innerHTML + JSON.stringify(payload);
-
-                if (enableForegroundNotification) {
-                    let notification = payload.notification;
-                    navigator.serviceWorker
-                        .getRegistrations()
-                        .then((registration) => {
-                            registration[0].showNotification(notification.title);
-                        });
-                }
-            });
+	 onMessage(messaging, function(payload) {
+	  console.log('[firebase-messaging-sw.js] Received foreground message ', payload);
+	  // Customize notification here
+	  const notificationTitle = 'Background Message Title';
+	  const notificationOptions = {
+	    body: 'Background Message body.',
+	    icon: '/favicon.ico'
+	  };
+	
+	  self.registration.showNotification(notificationTitle,
+	    notificationOptions);
+	});
         </script>
     </body>
 </html>
