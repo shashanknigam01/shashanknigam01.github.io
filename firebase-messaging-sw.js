@@ -14,22 +14,10 @@ firebase.initializeApp({
 
 // Retrieve an instance of Firebase Messaging so that it can handle background
 // messages.
-const messaging = firebase.messaging();
-
-messaging.setBackgroundMessageHandler(function(payload) {
-    console.log(
-        "[firebase-messaging-sw.js] Received background message ",
-        payload,
-    );
-    // Customize notification here
-    const notificationTitle = "Background Message Title";
-    const notificationOptions = {
-        body: "Background Message body.",
-        icon: "/itwonders-web-logo.png",
-    };
-
-    return self.registration.showNotification(
-        notificationTitle,
-        notificationOptions,
-    );
-});
+const isSupported = firebase.messaging.isSupported();
+if (isSupported) {
+    const messaging = firebase.messaging();
+    messaging.onBackgroundMessage(({ notification: { title, body, image } }) => {
+        self.registration.showNotification(title, { body, icon: image || '/assets/icons/icon-72x72.png' });
+    });
+}
