@@ -1,25 +1,30 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2016 Google Inc.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
 <html>
-    <title>Firebase Messaging Demo</title>
-    <style>
-        div {
-            margin-bottom: 15px;
-        }
-    </style>
-    <body>
-        <div id="token"></div>
-        <div id="msg"></div>
-        <div id="notis"></div>
-        <div id="err"></div>
-	 <script type='module'>
-	    // Import the functions you need from the SDKs you need
-	 import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js';
-	 import {getMessaging, onMessage, getToken} from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-messaging.js';
-           var MsgElem = document.getElementById('msg');
-            var TokenElem = document.getElementById('token');
-           var NotisElem = document.getElementById('notis');
-            var ErrElem = document.getElementById('err');
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firebase Cloud Messaging Example</title>
+  <script type='module'>
+    // Import the functions you need from the SDKs you need
+ import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js';
+ import {getToken, onMessage, getMessaging} from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-messaging.js';
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-            // TODO: Replace firebaseConfig you get from Firebase Console
+
+  // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAqjqQRL7Tvsi4HzwJw-CHh6avJg6iPdUY",
   authDomain: "shashankproject2.firebaseapp.com",
@@ -28,10 +33,11 @@ const firebaseConfig = {
   messagingSenderId: "729315975437",
   appId: "1:729315975437:web:d7d3c0acb10919f999d044"
 };
-	   const firebase = initializeApp(firebaseConfig);
-            const messaging = getMessaging(firebase);
 
-Notification.requestPermission().then((permission) => {
+  // Initialize Firebase
+  const firebase = initializeApp(firebaseConfig);
+  const messaging = getMessaging(firebase);
+  Notification.requestPermission().then((permission) => {
     if (permission === 'granted') {
       console.log('Notification permission granted.');
 	  getToken(messaging,{vapidKey: 'BKeu5Bn_F3smfGVJqi-E1h2dITnV1VyStlM9JSnFYyWSRZ-OBGNt8LqXjA2kiQ7dQFSHQyq7U5NSP5Xwl869kWo'}).then((currentToken) => {
@@ -48,22 +54,29 @@ Notification.requestPermission().then((permission) => {
     });
 	 }
 	});
-            
 
-	 onMessage(messaging, function(payload) {
-	  console.log('[firebase-messaging-sw.js] Received foreground message ', payload);
-	  // Customize notification here
-	  const notificationTitle = 'Background Message Title';
-	  const notificationOptions = {
-	    body: 'Background Message body.',
-	    icon: '/favicon.ico'
-	  };
-	
-	  self.registration.showNotification(notificationTitle,
-	    notificationOptions);
-	});
-		 
+ onMessage(messaging, function(payload) {
+  console.log('[firebase-messaging-sw.js] Received foreground message ', payload);
+  // Customize notification here
+  const notificationTitle = 'Background Message Title';
+  const notificationOptions = {
+    body: 'Background Message body.',
+    icon: '/favicon.ico'
+  };
 
-        </script>
-    </body>
+  self.registration.showNotification(notificationTitle,
+    notificationOptions);
+});
+
+
+  </script>  
+
+</head>
+<body>
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+Firebase App
+
+
+</div>
+</body>
 </html>
