@@ -1,31 +1,26 @@
-<!DOCTYPE html>
-<!--
-Copyright (c) 2016 Google Inc.
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
 <html>
-<head>
-  <meta charset=utf-8 />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Firebase Cloud Messaging Example</title>
-  <script type='module'>
-    // Import the functions you need from the SDKs you need
- import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js';
- import {getToken, onMessage} from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-messaging.js';
- import {getMessaging} from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-messaging-sw.js';
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+    <title>Firebase Messaging Demo</title>
+    <style>
+        div {
+            margin-bottom: 15px;
+        }
+    </style>
+    <body>
+        <div id="token"></div>
+        <div id="msg"></div>
+        <div id="notis"></div>
+        <div id="err"></div>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
 
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-messaging.js"></script>
+        <script>
+            MsgElem = document.getElementById('msg');
+            TokenElem = document.getElementById('token');
+            NotisElem = document.getElementById('notis');
+            ErrElem = document.getElementById('err');
 
-  // Your web app's Firebase configuration
+            // TODO: Replace firebaseConfig you get from Firebase Console
 const firebaseConfig = {
   apiKey: "AIzaSyAqjqQRL7Tvsi4HzwJw-CHh6avJg6iPdUY",
   authDomain: "shashankproject2.firebaseapp.com",
@@ -34,62 +29,41 @@ const firebaseConfig = {
   messagingSenderId: "729315975437",
   appId: "1:729315975437:web:d7d3c0acb10919f999d044"
 };
+            firebase.initializeApp(firebaseConfig);
 
-  // Initialize Firebase
-  const firebase = initializeApp(firebaseConfig);
-  const messaging = getMessaging(firebase);
-  Notification.requestPermission().then((permission) => {
-    if (permission === 'granted') {
-      console.log('Notification permission granted.');
-	  getToken(messaging,{vapidKey: 'BKeu5Bn_F3smfGVJqi-E1h2dITnV1VyStlM9JSnFYyWSRZ-OBGNt8LqXjA2kiQ7dQFSHQyq7U5NSP5Xwl869kWo'}).then((currentToken) => {
-      if (currentToken) {
-	    console.log(currentToken);
-      } else {
-        // Show permission request.
-        console.log('No registration token available. Request permission to generate one.');
-        // Show permission UI.
+            const messaging = firebase.messaging();
+            messaging
+                .requestPermission()
+                .then(function () {
+                    MsgElem.innerHTML = 'Notification permission granted.';
+                    console.log('Notification permission granted.');
 
-      }
-    }).catch((err) => {
-      console.log('An error occurred while retrieving token. ', err);
-    });
-	 }
-	});
+                    // get the token in the form of promise
+                    return messaging.getToken();
+                })
+                .then(function (token) {
+                    TokenElem.innerHTML = 'Device token is : <br>' + token;
+                })
+                .catch(function (err) {
+                    ErrElem.innerHTML = ErrElem.innerHTML + '; ' + err;
+                    console.log('Unable to get permission to notify.', err);
+                });
 
- onMessage(messaging, function(payload) {
-  console.log('[firebase-messaging-sw.js] Received foreground message ', payload);
-  // Customize notification here
-  const notificationTitle = 'Background Message Title';
-  const notificationOptions = {
-    body: 'Background Message body.',
-    icon: '/favicon.ico'
-  };
+            let enableForegroundNotification = true;
+            messaging.onMessage(function (payload) {
+                console.log('Message received. ', payload);
+                NotisElem.innerHTML =
+                    NotisElem.innerHTML + JSON.stringify(payload);
 
-  self.registration.showNotification(notificationTitle,
-    notificationOptions);
-});
-
-/*onBackgroundMessage(messaging, function(payload) {
-  console.log('[firebase-messaging-sw.js] Received background message ', payload);
-  // Customize notification here
-  const notificationTitle = 'Background Message Title';
-  const notificationOptions = {
-    body: 'Background Message body.',
-    icon: '/favicon.ico'
-  };
-
-  self.registration.showNotification(notificationTitle,
-    notificationOptions);
-});*/
-
-  </script>  
-
-</head>
-<body>
-<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
-Firebase App
-
-
-</div>
-</body>
+                if (enableForegroundNotification) {
+                    let notification = payload.notification;
+                    navigator.serviceWorker
+                        .getRegistrations()
+                        .then((registration) => {
+                            registration[0].showNotification(notification.title);
+                        });
+                }
+            });
+        </script>
+    </body>
 </html>
