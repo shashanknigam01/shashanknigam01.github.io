@@ -1,15 +1,20 @@
+ import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js';
+ import {getMessaging} from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-messaging.js';
+ 
+   const firebase = initializeApp(firebaseConfig);
+  const messaging = getMessaging(firebase);
+
 // Initialize the Firebase app in the service worker by passing in the
 // messagingSenderId.
-firebase.initializeApp({
+const firebaseConfig = {
     messagingSenderId: "729315975437",
     apiKey: "AIzaSyAqjqQRL7Tvsi4HzwJw-CHh6avJg6iPdUY",
     projectId: "shashankproject2",
     appId: "1:729315975437:web:d7d3c0acb10919f999d044",
-});
+};
 
 // Retrieve an instance of Firebase Messaging so that it can handle background
 // messages.
-const messaging = firebase.messaging();
 
 messaging.setBackgroundMessageHandler(function(payload) {
     console.log(
