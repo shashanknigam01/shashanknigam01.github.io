@@ -17,8 +17,8 @@ firebase.initializeApp({
 //const isSupported = firebase.messaging.isSupported();
 //if (isSupported) {
     const messaging = firebase.messaging();
-    messaging.onBackgroundMessage(({ notification: { title, body, image } }) => {
-      console.log('BG Message')  
-      //self.registration.showNotification(title, { body, icon: image || 'https://shashanknigam01.github.io/favicon.ico' });
-    });
+    /*messaging.onBackgroundMessage(({ notification: { title, body, image } }) => {
+     console.log('BG Message')  
+      self.registration.showNotification(title, { body, icon: image || 'https://shashanknigam01.github.io/favicon.ico' });
+    });*/
 //}
