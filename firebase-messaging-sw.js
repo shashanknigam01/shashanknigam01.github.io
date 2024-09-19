@@ -11,14 +11,3 @@ firebase.initializeApp({
   messagingSenderId: "729315975437",
   appId: "1:729315975437:web:d7d3c0acb10919f999d044"
 });
-
-// Retrieve an instance of Firebase Messaging so that it can handle background
-// messages.
-const isSupported = firebase.messaging.isSupported();
-if (isSupported) {
-    const messaging = firebase.messaging();
-    messaging.onBackgroundMessage(({ notification: { title, body, image } }) => {
-      console.log('BG Message')  
-      //self.registration.showNotification(title, { body, icon: image || 'https://shashanknigam01.github.io/favicon.ico' });
-    });
-}
