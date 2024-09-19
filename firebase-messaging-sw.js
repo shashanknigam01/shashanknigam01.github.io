@@ -11,3 +11,7 @@ firebase.initializeApp({
   messagingSenderId: "729315975437",
   appId: "1:729315975437:web:d7d3c0acb10919f999d044"
 });
+
+// Retrieve an instance of Firebase Messaging so that it can handle background
+// messages.
+const isSupported = firebase.messaging.isSupported();
