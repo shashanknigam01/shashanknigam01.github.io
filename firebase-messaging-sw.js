@@ -20,6 +20,6 @@ firebase.initializeApp({
     //messaging.onBackgroundMessage(({ notification: { title, body, image } }) => {
      messaging.onBackgroundMessage((payload) => {
       console.log('BG Message'+JSON.stringify(payload))  
-      //self.registration.showNotification(title, { body, icon: image || 'https://shashanknigam01.github.io/favicon.ico' });
+      self.registration.showNotification(payload.data.title , { payload.data._msg , icon: payload.data.icon || 'https://shashanknigam01.github.io/favicon.ico' });
     });
 //}
