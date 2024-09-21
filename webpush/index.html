@@ -64,7 +64,8 @@ onMessage(messaging, function(payload) {
     icon: payload.data.icon
   };
   //self.registration.showNotification(notificationTitle, notificationOptions);
-  return self.registration.showNotification('Welcome');
+  //return self.registration.showNotification('Welcome');
+  alert(payload.data.title);
 });
   </script>  
 
