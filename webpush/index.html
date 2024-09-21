@@ -63,8 +63,7 @@ onMessage(messaging, function(payload) {
     body: payload.data._msg,
     icon: payload.data.icon
   };
-  self.registration.showNotification(notificationTitle,
-    notificationOptions);
+  self.registration.showNotification(notificationTitle, notificationOptions);
 });
   </script>  
 
