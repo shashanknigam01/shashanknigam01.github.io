@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script>
-       Notification.requestPermission();
+   Notification.requestPermission().then((permission) => {
+    if (permission === 'granted') {
+      console.log('Notification permission granted.');
+	 }
+	});
      </script>
 <!-- <script src="https://assets.adobedtm.com/85462031b1ac/4ca309047e50/launch-963721269a11-development.min.js" async></script> -->
 	<script src="https://assets.adobedtm.com/624439c2d1ee/97e097390ae3/launch-a51a809169b4-development.min.js" async></script>
